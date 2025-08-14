@@ -59,7 +59,7 @@ public class InsecureHttpTransportTest {
         // Build transport
         Transport transport = builder.build(config);
         assertNotNull(transport);
-        assertTrue(transport instanceof HttpTransport);
+        assertTrue(transport instanceof InsecureHttpTransport);
     }
 
     @Test

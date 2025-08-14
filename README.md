@@ -27,6 +27,22 @@ This means it will work with:
 
 ## Usage
 
+### Local Testing with LocalStack
+
+For local development and testing, you can use the included LocalStack setup:
+
+```bash
+# Complete demo with LocalStack
+./demo.sh
+
+# Or run individual steps:
+./setup_localstack.sh    # Setup LocalStack + Glue
+./run_glue_job.sh        # Run test job
+./view_lineage_events.sh # Check results
+```
+
+See [LOCALSTACK_README.md](LOCALSTACK_README.md) for detailed local testing instructions.
+
 ### AWS Glue Integration
 
 You can use this transport in AWS Glue by following these steps:

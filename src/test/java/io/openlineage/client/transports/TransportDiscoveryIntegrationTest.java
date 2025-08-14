@@ -74,7 +74,7 @@ public class TransportDiscoveryIntegrationTest {
         // 4. Build transport
         Transport transport = builder.build(config);
         assertNotNull(transport, "Transport should be built successfully");
-        assertTrue(transport instanceof HttpTransport);
+        assertTrue(transport instanceof InsecureHttpTransport);
     }
 
     /**

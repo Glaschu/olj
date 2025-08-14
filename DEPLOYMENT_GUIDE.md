@@ -97,10 +97,31 @@ The transport will be automatically discovered via SPI. You can verify it's work
 
 ## Local Testing
 
-### Run All Tests
+### Unit Tests
 ```bash
 mvn clean test
 ```
+
+### LocalStack Integration Testing
+
+For comprehensive testing with AWS Glue simulation:
+
+```bash
+# Setup complete LocalStack environment
+./setup_localstack.sh
+
+# Run Glue job with insecure HTTP transport
+./run_glue_job.sh
+
+# Check logs and lineage events
+./check_logs.sh
+./view_lineage_events.sh
+
+# Cleanup
+docker-compose down
+```
+
+See [LOCALSTACK_README.md](LOCALSTACK_README.md) for detailed LocalStack testing instructions.
 
 ### Build JAR
 ```bash

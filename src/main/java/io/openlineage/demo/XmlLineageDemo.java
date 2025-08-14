@@ -22,7 +22,7 @@ public class XmlLineageDemo {
         try {
             // Create configuration for insecure HTTP transport
             InsecureHttpConfig config = new InsecureHttpConfig();
-            config.setUrl(URI.create("https://localhost:8080/api/v1/lineage")); // Example endpoint
+            config.setUrl(URI.create("http://localhost:8080/api/v1/lineage")); // Mock endpoint
             
             // Optional: Add headers
             Map<String, String> headers = new HashMap<>();

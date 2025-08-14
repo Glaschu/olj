@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  localstack:
+    container_name: localstack-glue
+    image: localstack/localstack:3.0
+    ports:
+      - "4566:4566"            # LocalStack Gateway
+      - "4510-4559:4510-4559"  # External services port range
+    environment:
+      - DEBUG=${DEBUG:-0}
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - SERVICES=s3,glue,logs,iam
+      - DATA_DIR=/tmp/localstack/data
+      - PERSIST_DATA=1
+      - LAMBDA_EXECUTOR=docker
+      - LAMBDA_REMOTE_DOCKER=false
+      - START_WEB=0
+    volumes:
+      - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./localstack-init:/etc/localstack/init/ready.d"
+    networks:
+      - glue-network
+
+  # Mock OpenLineage endpoint (for testing)
+  openlineage-mock:
+    container_name: openlineage-mock
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - "./mock-lineage-config:/etc/nginx/conf.d"
+    networks:
+      - glue-network
+
+  # Simple HTTP server to serve our JAR file
+  jar-server:
+    container_name: jar-server
+    image: nginx:alpine
+    ports:
+      - "8081:80"
+    volumes:
+      - "./target:/usr/share/nginx/html"
+    networks:
+      - glue-network
+
+networks:
+  glue-network:
+    driver: bridge

@@ -1,4 +1,8 @@
 io/openlineage/client/transports/InsecureHttpConfig.class
-io/openlineage/demo/XmlLineageDemo.class
-io/openlineage/client/transports/InsecureHttpTransportBuilder$1.class
+io/openlineage/client/transports/InsecureHttpTransport.class
+io/openlineage/demo/DirectSslTestDemo.class
+io/openlineage/client/transports/InsecureHttpTransport$1.class
 io/openlineage/client/transports/InsecureHttpTransportBuilder.class
+io/openlineage/demo/TransportTestDemo.class
+io/openlineage/demo/SslTestDemo.class
+io/openlineage/demo/XmlLineageDemo.class
