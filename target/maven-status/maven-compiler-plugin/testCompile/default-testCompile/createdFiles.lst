@@ -1,0 +1,3 @@
+io/openlineage/client/transports/ClasspathDebugTest.class
+io/openlineage/client/transports/InsecureHttpTransportTest.class
+io/openlineage/client/transports/TransportDiscoveryIntegrationTest.class
