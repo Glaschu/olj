@@ -1,0 +1,4 @@
+io/openlineage/client/transports/InsecureHttpConfig.class
+io/openlineage/demo/XmlLineageDemo.class
+io/openlineage/client/transports/InsecureHttpTransportBuilder$1.class
+io/openlineage/client/transports/InsecureHttpTransportBuilder.class
