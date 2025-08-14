@@ -34,6 +34,6 @@ public class InsecureHttpConfig implements TransportConfig {
     }
     
     public Integer getTimeoutInMillis() {
-        return timeout != null ? (int) timeout.toMillis() : null;
+        return timeout != null ? (int) timeout.toMillis() : 5000; // Default 5 seconds
     }
 }
